@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<fiche_localisee parentId="N127" xmlns:lutece="luteceComarquage" >
+<fiche_pratique url="LN11.xml">
+  <date_update>1 septembre 2004</date_update>
+  <date_synchro>15 septembre 2004</date_synchro>
+    <titre>titre LN11</titre>
+    
+    <mots_cles>Activités, périscolaires</mots_cles>
+    
+    <theme>Activités, périscolaires</theme>
+    
+   <vosdroits>
+      <noeuds_fils>   
+      </noeuds_fils>
+   </vosdroits>
+    
+  
+    <liens>
+    <web>
+      <item>
+        <titre>Fiche modèle</titre>
+        <lien>http://www.paris.fr/fr/Vos_demarches/Enseignement/activites_periscolaires.asp</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Site de l'administration fiscale</titre>
+        <lien>http://www.impots.gouv.fr/</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Site de l'Institut national de la consommation </titre>
+        <lien>http://www.inc60.fr</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Le portail de la consommation </titre>
+        <lien>http://www.conso.net</lien>
+        <description/>
+      </item>
+    </web>
+  </liens>
+  
+  
+</fiche_pratique>
+
+
+<infos_loc >
+  
+  <position/>
+  <zones_englobantes/>
+    
+  <services_informer>
+    <service ref_service="13323" cache_organisme="0" lutece:code_cdc="546641">
+      <point_d_accueil>
+        <nom>Service Accueil</nom>
+        <adresse_postale>
+          <position_voie>34, cours Blaise Pascal</position_voie>
+          <cp>75001</cp>
+          <cedex>Cedex</cedex>
+          <bp/>
+          <ville>Paris 1er</ville>
+        </adresse_postale>
+        <coord_num>
+          <telephone>0101000000</telephone>
+          <telecopie>0101000001</telecopie>
+        </coord_num>
+        <details_competence/>
+        <organisme ref_organisme="41521">
+          <type_organisme ref_type_organisme="72">
+            <nom>CTRC</nom>
+          </type_organisme>
+          <nom>Direction Régionale de la DGCCRF</nom>
+        </organisme>
+      </point_d_accueil>
+    </service>
+    
+    
+    <service ref_service="13323" cache_organisme="0" lutece:code_cdc="2">
+      <point_d_accueil>
+        <nom>Service Accueil</nom>
+        <adresse_postale>
+          <position_voie>34, cours Blaise Pascal</position_voie>
+          <cp>75002</cp>
+          <cedex>Cedex</cedex>
+          <bp/>
+          <ville>Paris 2eme</ville>
+        </adresse_postale>
+        <coord_num>
+          <telephone>0102000000</telephone>
+          <telecopie>0102000002</telecopie>
+        </coord_num>
+        <details_competence/>
+        <organisme ref_organisme="41521">
+          <type_organisme ref_type_organisme="72">
+            <nom>CTRC</nom>
+          </type_organisme>
+          <nom>Direction Régionale de la DGCCRF</nom>
+        </organisme>
+      </point_d_accueil>
+    </service>    
+    
+    
+  </services_informer>
+  
+  <sous_niveaux_competents/>
+    
+  
+</infos_loc>
+
+
+  
+  
+  
+  <infos_techniques>
+    <chemin id="N0/N10/LN10/N127/LN11">
+      <fiche_tech id="N0" path="N0" titre="Liste des thèmes"/>
+      <fiche_tech id="N10" path="N0/N10" titre="Famille"/>
+      <fiche_tech id="LN10" path="N0/N10/LN10" titre="titre LN10"/>
+      <fiche_tech id="N127" path="N0/N10/LN10/N127" titre="Enfant"/>
+      <fiche_tech id="LN11" path="N0/N10/LN10/N127/LN11" titre="titre LN11"/>
+    </chemin>
+  </infos_techniques>
+  
+  
+  <infos_reloc/>
+  
+</fiche_localisee>

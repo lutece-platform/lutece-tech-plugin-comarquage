@@ -1,0 +1,29 @@
+<div class="content-box" >
+
+<h2>#i18n{comarquage.create_xml_local_files.pageTitle}</h2>
+
+
+
+<form method="post" action="jsp/admin/plugins/comarquage/DoCreateXmlLocalFile.jsp?plugin_name=${plugin_name}" enctype="multipart/form-data" name="createXmlLocalFile">
+
+			<table>
+		        
+				<tr>
+				      <th>#i18n{comarquage.create_xml_local_files.labelFile}</th>
+				      <td><input type="file" name="file_source" size="60" maxlength="100"></td>
+				</tr>
+			</table>
+
+
+
+<table>
+	<tr>
+	    <th>  <input type="submit" value="#i18n{comarquage.create_xml_local_files.buttonAdd}" class="button"></th>
+	</tr>
+</table>
+<script language="JavaScript">
+	window.onload = createXmlLocalFile.file_source.focus
+</script>
+</form>
+</center>
+<br>

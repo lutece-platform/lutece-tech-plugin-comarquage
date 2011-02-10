@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<fiche_localisee parentId="N171" xmlns:lutece="luteceComarquage" >
+<fiche_pratique url="LF3333.xml">
+  <date_update>1 septembre 2004</date_update>
+  <date_synchro>15 septembre 2004</date_synchro>
+    <titre>test</titre>
+    
+    <mots_cles>Etudes</mots_cles>
+    
+    <theme>Etudes</theme>
+    
+    <vosdroits>
+    <fiches>
+      
+      <fiche id="LF3333.xml">
+       
+        <titre>Inscription aux études surveillées</titre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Informations générales</Paragraphe>
+            </Titre>
+            <Liste>
+                <Item>
+                    <Paragraphe>à une association locale de consommateurs,</Paragraphe>
+                </Item>
+                <Item>
+                    <Paragraphe>à la direction départementale de la concurrence de la consommation et de la répression des fraudes,</Paragraphe>
+                </Item>
+                <Item>
+                    <Paragraphe>au centre technique régional de la consommation.</Paragraphe>
+                </Item>
+            </Liste>
+        </Chapitre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Vous pouvez laisser un message:</Paragraphe>
+            </Titre>
+            <Liste>
+                <Item>
+                    <Paragraphe>sur internet, sur le site du ministère de l'Economie, des Finances et de l'Industrie.</Paragraphe>
+                </Item>
+            </Liste>
+        </Chapitre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Boîte postale 5000</Paragraphe>
+            </Titre>
+            <Paragraphe>Ecrivez : BP 5000 - chef lieu du département (exemple: BP 5000 - 33000 Bordeaux).</Paragraphe>
+            <Paragraphe>
+                <MiseEnEvidence>Attention</MiseEnEvidence>! Il n'existe pas de boîte postale 5000 dans tous les départements.
+      </Paragraphe>
+            <Paragraphe>Consultez la liste sur le site internet du ministère de l'économie, des finances et de l'industrie.</Paragraphe>
+        </Chapitre>
+    </fiche>
+   
+    </fiches>
+ 
+  </vosdroits>
+    
+  
+    <liens>
+    <web>
+      <item>
+   <titre>Fiche modèle</titre>
+   <lien>http://www.paris.fr/fr/Vos_demarches/Activites_periscolaires/Etudes_surveillees.asp</lien>
+   <description/>
+      </item>
+      <item>
+        <titre>Site de l'administration fiscale</titre>
+        <lien>http://www.impots.gouv.fr/</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Site de l'Institut national de la consommation </titre>
+        <lien>http://www.inc60.fr</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Le portail de la consommation </titre>
+        <lien>http://www.conso.net</lien>
+        <description/>
+      </item>
+    </web>
+    
+  </liens>
+  
+  
+</fiche_pratique>
+
+
+
+  
+  
+  <infos_techniques>
+    <chemin id="N0/N10/N171/LF3333">
+      <fiche_tech id="N0" path="N0" titre="Liste des thèmes"/>
+      <fiche_tech id="N10" path="N0/N10" titre="Famille"/>
+      <fiche_tech id="N171" path="N0/N10/N171" titre="Succession"/>
+      <fiche_tech id="LF3333" path="N0/N10/N171/LF3333" titre="test"/>
+    </chemin>
+  </infos_techniques>
+  
+  <infos_reloc/>
+  
+</fiche_localisee>

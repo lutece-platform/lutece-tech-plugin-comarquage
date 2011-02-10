@@ -1,0 +1,27 @@
+
+
+<div class="content-box" >
+
+<h2>#i18n{comarquage.modify_xsl_welcome_page.pageTitle} ${title}</h2>
+
+<form method="post" action="jsp/admin/plugins/comarquage/DoModifyXslWelcomePage.jsp?plugin_name=${plugin_name}" enctype="multipart/form-data" name="modifyXslWelcomePage">
+<input type="hidden" name="role_name"  value="${role_name}"/>
+
+			<table>
+
+				<tr>
+				      <th>#i18n{comarquage.modify_xsl_welcome_page.labelFile}</th>
+				      <td><input type="file" name="file_source" size="60" maxlength="100"></td>
+				</tr>
+		</table>
+<table>
+	<tr>
+	    <th>  <input type="submit" value="#i18n{comarquage.modify_xsl_welcome_page.buttonModify}" class="button"></th>
+	</tr>
+</table>
+<script language="JavaScript">
+	window.onload = modifyXslWelcomePage.file_source.focus
+</script>
+</form>
+</center>
+<br>

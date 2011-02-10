@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<fiche_localisee parentId="N2,N3,LN5" xmlns:lutece="luteceComarquage" >
+<fiche_pratique url="LF35.xml">
+  <date_update>1 septembre 2004</date_update>
+  <date_synchro>15 septembre 2004</date_synchro>
+    <titre>Test Fiche locale</titre>
+    
+    <mots_cles>Achat, Consommation</mots_cles>
+    
+    <theme>Achat, argent</theme>
+    
+    <vosdroits>
+    <fiches>
+      
+      <fiche id="LF35.xml">
+       
+        <titre>Règlement d'un litige de consommation: où s'adresser?</titre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Pour toute information, adressez-vous:</Paragraphe>
+            </Titre>
+            <Liste>
+                <Item>
+                    <Paragraphe>à une association locale de consommateurs,</Paragraphe>
+                </Item>
+                <Item>
+                    <Paragraphe>à la direction départementale de la concurrence de la consommation et de la répression des fraudes,</Paragraphe>
+                </Item>
+                <Item>
+                    <Paragraphe>au centre technique régional de la consommation.</Paragraphe>
+                </Item>
+            </Liste>
+        </Chapitre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Vous pouvez laisser un message:</Paragraphe>
+            </Titre>
+            <Liste>
+                <Item>
+                    <Paragraphe>sur internet, sur le site du ministère de l'Economie, des Finances et de l'Industrie.</Paragraphe>
+                </Item>
+            </Liste>
+        </Chapitre>
+        <Chapitre>
+            <Titre>
+                <Paragraphe>Boîte postale 5000</Paragraphe>
+            </Titre>
+            <Paragraphe>Ecrivez : BP 5000 - chef lieu du département (exemple: BP 5000 - 33000 Bordeaux).</Paragraphe>
+            <Paragraphe>
+                <MiseEnEvidence>Attention</MiseEnEvidence>! Il n'existe pas de boîte postale 5000 dans tous les départements.
+      </Paragraphe>
+            <Paragraphe>Consultez la liste sur le site internet du ministère de l'économie, des finances et de l'industrie.</Paragraphe>
+        </Chapitre>
+    </fiche>
+   
+    </fiches>
+ 
+  </vosdroits>
+    
+  
+    <liens>
+    <web>
+      <item>
+        <titre>Site de l'administration fiscale</titre>
+        <lien>http://www.impots.gouv.fr/</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Site de l'Institut national de la consommation </titre>
+        <lien>http://www.inc60.fr</lien>
+        <description/>
+      </item>
+      <item>
+        <titre>Le portail de la consommation </titre>
+        <lien>http://www.conso.net</lien>
+        <description/>
+      </item>
+    </web>
+  </liens>
+  
+  
+</fiche_pratique>
+
+
+<infos_loc>
+  
+  <position/>
+  <zones_englobantes/>
+  
+  
+  <services_accomplir>
+      <service lutece:code_cdc="3" ref_service="13323" cache_organisme="0">
+        <point_d_accueil>
+          <nom>autre code cdc présent</nom>
+          <adresse_postale>
+            <position_voie>34, cours Blaise Pascal</position_voie>
+            <cp>75001</cp>
+            <cedex>Cedex</cedex>
+            <bp/>
+            <ville>Paris 1er</ville>
+          </adresse_postale>
+          <coord_num>
+            <telephone>0101000000</telephone>
+            <telecopie>0101000001</telecopie>
+          </coord_num>
+          <details_competence/>
+          <organisme ref_organisme="41521">
+            <type_organisme ref_type_organisme="72">
+              <nom>CTRC</nom>
+            </type_organisme>
+            <nom>Direction Régionale de la DGCCRF</nom>
+          </organisme>
+        </point_d_accueil>
+    </service>  
+  </services_accomplir>
+    
+  <services_informer>
+    <service lutece:code_cdc="3" ref_service="13323" cache_organisme="0">
+      <point_d_accueil>
+        <nom>autre code cdc présent</nom>
+        <adresse_postale>
+          <position_voie>34, cours Blaise Pascal</position_voie>
+          <cp>75001</cp>
+          <cedex>Cedex</cedex>
+          <bp/>
+          <ville>Paris 1er</ville>
+        </adresse_postale>
+        <coord_num>
+          <telephone>0101000000</telephone>
+          <telecopie>0101000001</telecopie>
+        </coord_num>
+        <details_competence/>
+        <organisme ref_organisme="41521">
+          <type_organisme ref_type_organisme="72">
+            <nom>CTRC</nom>
+          </type_organisme>
+          <nom>Direction Régionale de la DGCCRF</nom>
+        </organisme>
+      </point_d_accueil>
+    </service>  
+    
+    <service lutece:code_cdc="2"  ref_service="13323" cache_organisme="0">
+      <point_d_accueil>
+        <nom>autre code cdc présent</nom>
+        <adresse_postale>
+          <position_voie>34, cours Blaise Pascal</position_voie>
+          <cp>75002</cp>
+          <cedex>Cedex</cedex>
+          <bp/>
+          <ville>Paris 2eme</ville>
+        </adresse_postale>
+        <coord_num>
+          <telephone>0202000000</telephone>
+          <telecopie>0202000002</telecopie>
+        </coord_num>
+        <details_competence/>
+        <organisme ref_organisme="41521">
+          <type_organisme ref_type_organisme="72">
+            <nom>CTRC</nom>
+          </type_organisme>
+          <nom>Direction Régionale de la DGCCRF</nom>
+        </organisme>
+      </point_d_accueil>
+    </service>
+    
+    
+      <service lutece:code_cdc=""  ref_service="1387323" cache_organisme="0">
+          <point_d_accueil>
+            <nom>code cdc vide</nom>
+            <adresse_postale>
+              <position_voie>34, cours Blaise Pascal</position_voie>
+              <cp>75002</cp>
+              <cedex>Cedex</cedex>
+              <bp/>
+              <ville>Paris 2eme</ville>
+            </adresse_postale>
+            <coord_num>
+              <telephone>0202000000</telephone>
+              <telecopie>0202000002</telecopie>
+            </coord_num>
+            <details_competence/>
+            <organisme ref_organisme="41521">
+              <type_organisme ref_type_organisme="72">
+                <nom>CTRC</nom>
+              </type_organisme>
+              <nom>Direction Régionale de la DGCCRF</nom>
+            </organisme>
+          </point_d_accueil>
+    </service>
+    
+    <service  ref_service="133231" cache_organisme="0">
+              <point_d_accueil>
+                <nom>Pas de code cdc</nom>
+                <adresse_postale>
+                  <position_voie>34, cours Blaise Pascal</position_voie>
+                  <cp>75002</cp>
+                  <cedex>Cedex</cedex>
+                  <bp/>
+                  <ville>Paris 2eme</ville>
+                </adresse_postale>
+                <coord_num>
+                  <telephone>0202000000</telephone>
+                  <telecopie>0202000002</telecopie>
+                </coord_num>
+                <details_competence/>
+                <organisme ref_organisme="41521">
+                  <type_organisme ref_type_organisme="72">
+                    <nom>CTRC</nom>
+                  </type_organisme>
+                  <nom>Direction Régionale de la DGCCRF</nom>
+                </organisme>
+              </point_d_accueil>
+    </service>
+    
+    
+    <service ref_service="13323" cache_organisme="0" lutece:code_cdc="546641">
+          <point_d_accueil>
+            <nom>Mon code cdc</nom>
+            <adresse_postale>
+              <position_voie>34, cours Blaise Pascal</position_voie>
+              <cp>75001</cp>
+              <cedex>Cedex</cedex>
+              <bp/>
+              <ville>Paris 1er</ville>
+            </adresse_postale>
+            <coord_num>
+              <telephone>0101000000</telephone>
+              <telecopie>0101000001</telecopie>
+            </coord_num>
+            <details_competence/>
+            <organisme ref_organisme="41521">
+              <type_organisme ref_type_organisme="72">
+                <nom>CTRC</nom>
+              </type_organisme>
+              <nom>Direction Régionale de la DGCCRF</nom>
+            </organisme>
+          </point_d_accueil>
+    </service>
+    
+  </services_informer>
+  
+  <sous_niveaux_competents/>
+    
+  
+</infos_loc>
+
+
+
+  
+  
+  
+  <infos_techniques>
+    <chemin id="N0/LN1/N2/LF35">
+      <fiche_tech id="N0" path="N0" titre="Liste des thèmes"/>
+      <fiche_tech id="LN1" path="N0/LN1" titre="Citoyenneté"/>
+      <fiche_tech id="N2" path="N0/LN1/N2" titre="Armée"/>
+      <fiche_tech id="LF35" path="N0/LN1/N2/LF35" titre="Test Fiche locale"/>
+    </chemin>
+    <chemin id="N0/LN1/N3/LF35">
+      <fiche_tech id="N0" path="N0" titre="Liste des thèmes"/>
+      <fiche_tech id="LN1" path="N0/LN1" titre="Citoyenneté"/>
+      <fiche_tech id="N3" path="N0/LN1/N3" titre="Assurance"/>
+      <fiche_tech id="LF35" path="N0/LN1/N3/LF35" titre="Test Fiche locale"/>
+    </chemin>
+    <chemin id="N0/LN2/LN5/LF35">
+      <fiche_tech id="N0" path="N0" titre="Liste des thèmes"/>
+      <fiche_tech id="LN2" path="N0/LN2" titre="Jeunesse - Sport"/>
+      <fiche_tech id="LN5" path="N0/LN2/LN5" titre="Activités périscolaires"/>
+      <fiche_tech id="LF35" path="N0/LN2/LN5/LF35" titre="Test Fiche locale"/>
+    </chemin>
+  </infos_techniques>
+  
+  
+  
+  
+  <infos_reloc/>
+  
+</fiche_localisee>

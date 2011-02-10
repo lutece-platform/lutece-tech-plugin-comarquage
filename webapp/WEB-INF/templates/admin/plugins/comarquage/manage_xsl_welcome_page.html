@@ -1,0 +1,83 @@
+
+<div class="content-box" >
+
+<h2>#i18n{comarquage.manage_xsl_welcome_page.pageTitle}</h2>
+
+			<table>
+				<tr>
+					 <th>#i18n{comarquage.manage_xsl_welcome_page.columnLabelFileName}</th>
+					  <th>#i18n{comarquage.manage_xsl_welcome_page.columnLabelModify}</th>
+				</tr>
+				<tr>
+					<td>
+
+					&nbsp;<img src="images/admin/skin/bullet.gif" border="0">
+					#i18n{comarquage.manage_xsl_welcome_page.labelPro}
+
+					</td>
+					<td>
+					<form action="jsp/admin/plugins/comarquage/ModifyXslWelcomePage.jsp" name="modifyXslWelcomePagePro" >
+					    <input type="hidden" name="plugin_name" value="${plugin_name}"/>
+					    <input type="hidden" name="role_name" value="professionnel"/>
+					    <input type="hidden" name="title" value='"Professionnels"'/>
+						<input type="submit" value="#i18n{comarquage.manage_xsl_welcome_page.buttonModify}" class="button">
+					</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+					&nbsp;<img src="images/admin/skin/bullet.gif" border="0">
+					#i18n{comarquage.manage_xsl_welcome_page.labelPublic}
+
+					</td>
+					<td>
+					<form action="jsp/admin/plugins/comarquage/ModifyXslWelcomePage.jsp" name="modifyXslWelcomePageGP">
+					    <input type="hidden" name="plugin_name" value="${plugin_name}"/>
+					     <input type="hidden" name="role_name" value="grandPublic"/>
+					     <input type="hidden" name="title" value='"Grand Public"'/>
+						<input type="submit" value="#i18n{comarquage.manage_xsl_welcome_page.buttonModify}" class="button">
+					</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+					&nbsp;<img src="images/admin/skin/bullet.gif" border="0">
+					#i18n{comarquage.manage_xsl_welcome_page.labelAsso}
+
+					</td>
+					<td >
+					<form action="jsp/admin/plugins/comarquage/ModifyXslWelcomePage.jsp" name="modifyXslWelcomePageAssoc" >
+					    <input type="hidden" name="plugin_name" value="${plugin_name}"/>
+					    <input type="hidden" name="role_name" value="association"/>
+					    <input type="hidden" name="title" value='"Associations"'/>
+						<input type="submit" value="#i18n{comarquage.manage_xsl_welcome_page.buttonModify}" class="button">
+					</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+
+					&nbsp;<img src="images/admin/skin/bullet.gif" border="0">
+					#i18n{comarquage.manage_xsl_welcome_page.labelDefault}
+
+					</td>
+					<td >
+					<form action="jsp/admin/plugins/comarquage/ModifyXslWelcomePage.jsp" name="modifyXslWelcomePageDefault" >
+					    <input type="hidden" name="plugin_name" value="${plugin_name}"/>
+					    <input type="hidden" name="role_name" value=""/>
+					    <input type="hidden" name="title" value='par défaut'/>
+						<input type="submit" value="#i18n{comarquage.manage_xsl_welcome_page.buttonModify}" class="button">
+					</form>
+					</td>
+				</tr>
+
+			</table>
+
+
+
+</div>

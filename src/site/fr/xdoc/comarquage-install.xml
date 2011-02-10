@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <document>
+      <properties>
+          <title>
+              Plugin de comarquage - Guide utilisateur
+          </title>
+      </properties>
+      <body>
+          
+          <section name="1. Introduction">
+              <p>
+                  Ce document d&#233;crit le fonctionnement du plugin de
+                  co-marquage en administration et en utilisation.
+              </p>
+          </section>          
+          
+          <section name="2. Rubrique Comarquage : Interface d&#8217;administration">
+              <subsection name= "2.1. Description">
+          
+                  <p>
+                      La fonctionnalit&#233; d&#8217;administration du site permet &#224;
+                      l&#8217;utilisateur (connect&#233; en temps que webmaster)
+                      d&#8217;un site Lut&#232;ce de charger des
+                      fiches locales (fichiers XML) ainsi que les pages d&#8217;accueil
+                      personnalis&#233;es (selon le type d&#8217;utilisateur) et le fichier de
+                      mots-cl&#233;s.
+                  </p>
+                    
+                  <p>
+                      Les actions accessibles au webmaster sont les
+                      suivantes :
+                  </p>
+                    
+                  <p>
+                      <ul>
+                          <li>l&#8217;upload d&#8217;une nouvelle fiche locale,</li>
+                          <li>la suppression d&#8217;une fiche locale,</li>
+                          <li>l&#8217;upload des pages d&#8217;accueil,</li>
+                          <li>l&#8217;upload du fichier de mots-cl&#233;s des fiches publiques.</li>
+                      </ul>
+                  </p>
+              </subsection>
+                    
+              <subsection name= "2.2. Accueil Co-marquage">
+          
+                  <p>
+                      La page de gestion du plugin de co-marquage est constitu&#233;e de:
+                  </p>
+                    
+                  <p>
+                      <ul>
+                          <li>un formulaire rappelant le code abonn&#233;,</li>
+                          <li>un lien vers la page de gestion des fiches locales,</li>
+                          <li>un lien vers la page de gestion des pages d&#8217;accueil,</li>
+                          <li>un lien vers la page de gestion du fichier de mots cl&#233;s des fiches publiques.</li>
+                      </ul>
+                  </p>
+                    
+                 <p>
+                    <center>
+                            <img src="images/clip_image002.gif" />
+                     </center>
+                </p>
+              </subsection>
+          
+              <subsection name= "2.3. Accueil - gestion des fiches locales">
+          
+                  <p>
+                      La page d&#8217;accueil contient la liste des fiches locales pr&#233;sentes ainsi que le
+                      bouton d&#8217;acc&#232;s &#224;
+                      l&#8217;ajout d&#8217;une fiche locale. Pour chaque fiche
+                      locale, un bouton permettant sa suppression est disponible.
+                  </p>
+                    
+                  <p>
+                        <center>
+                            <img src="images/clip_image004.gif" />
+                        </center>                      
+                  </p>
+              </subsection>
+              
+              <subsection name= "2.4. Ajout et mise &#224; jour d&#8217; une fiche locale">
+                    
+                  <p>
+                      Les fiches &#224; ajouter ou &#224; mettre &#224;
+                      jour sont des fichiers au format XML qui
+                      doivent avoir &#233;t&#233; valid&#233;s. Aucun
+                      contr &#244;le de format ou de nom de fichier n&#8217;est
+                      effectu&#233;.
+                  </p>
+                    
+                  <p>
+                      <img alt="Ajout d'une fiche locale" src="images/clip_image006.gif"/>
+                  </p>
+                    
+                  <p>
+                      Si le fichier &#224; charger n&#8217;est pas
+                      pr&#233;sent (voir la liste disponible sur la page
+                      pr&#233;c&#233;dente), celui-ci est charg&#233;
+                      dans le r&#233;pertoire cible sans contr &#244;le de format.
+                  </p>
+                    
+                  <p>
+                      Si le fichier &#224; charger est d&#233;j&#224;
+                      pr&#233;sent dans le r&#233;pertoire cible (voir la liste
+                      disponible sur la page
+                      pr&#233;c&#233;dente), celui-ci sera remplac&#233;
+                      par le nouveau fichier.
+                  </p>
+                    
+                  <p>
+                      <strong>Remarque: </strong>
+                  </p>
+                    
+                  <p>
+                      Le nom des fiches locales et des n&#339;uds locaux doit
+                      imp&#233;rativement  &#234;tre pr&#233;fix&#233;
+                      par la lettre L (ce pr&#233;fixe est configurable).
+                  </p>
+                    
+              </subsection>
+              
+              <subsection name= "2.5. Suppression d&#8217; une fiche locale">
+              
+                  <p>
+                      Les fiches peuvent  &#234;tre supprim&#233;es par utilisation du
+                      bouton disponible sur chaque ligne du tableau contenant la liste des fiches locales.
+                  </p>
+                    
+                  <p>
+                      <img alt="Liste des fiches locales, avec boutons de suppression" src="images/clip_image007.gif"/>
+                  </p>
+                    
+                  <p> Une page de confirmation est alors affich&#233;e.
+                      Apr&#232;s cette validation le fichier
+                      est supprim&#233;.
+                  </p>
+                    
+                  <p>
+                      <img alt="Message de confirmation de suppression d'une fiche locale" src="images/clip_image009.gif"/>
+                  </p>
+                    
+              </subsection>
+              
+              <subsection name= "2.6. Accueil - gestion des pages d&#8217;accueil">
+
+                  <p>
+                      Chaque type d&#8217;utilisateur r&#233;f&#233;renc&#233;
+                      (Grand Public, Association et Professionnel) n&#233;cessite une page d&#8217;accueil
+                      personnalis&#233;e. La pr&#233;sence de ces
+                      fichiers est facultative et leur nom n&#8217;est pas modifiable.
+                      Dans le cas o&#249; grave; un
+                      fichier attendu n&#8217;est pas pr&#233;sent, les
+                      th&#232;mes du n&#339;ud racine (N0) seront
+                      affich&#233;s.
+                  </p>
+                    
+                  <p>
+                      <img alt="Gestion des pages d'accueil" src="images/clip_image011.gif"/>
+                  </p>
+                    
+              </subsection>
+              
+              <subsection name= "2.7. Modification d&#8217;une page d&#8217;accueil">
+
+                  <p>
+                      Le fichier s&#233;lectionn&#233; est upload&#233; et
+                      attribu&#233; au type d&#8217;utilisateur
+                      s&#233;lectionn&#233; (Grand public, Professionnel,
+                      Association, &#8220;  par
+                      d&#233;faut &#8221; ).
+                  </p>
+                    
+                  <p>
+                      <img alt="Modification d'une page d'accueil" src="images/clip_image013.gif"/>
+                  </p>
+                    
+              </subsection>
+              
+              <subsection name= "2.8. Uploader le fichier de mots cl&#233;s des fiches publiques">
+
+                  <p>
+                      Le
+                      plugin int&#232;gre la possibilit&#233; de modifier le
+                      fichier de mots-cl&#233;s pr&#233;sent
+                      pour l&#8217;indexation.
+                  </p>
+                    
+                  <p>
+                      <img alt="Gestion des fichiers de mots-cl&#233;s" src="images/clip_image015.gif"/>
+                  </p>
+                    
+                  <p>
+                      Le fichier est &#224; s&#233;lectionner dans un premier temps.
+                      L&#8217;action &#8220;  Modifier &#8221; 
+                      permet ensuite de remplacer le fichier d&#233;j&#224;
+                      pr&#233;sent. 
+                  </p>
+                    
+                  <p>
+                      Le fichier ne subit ni contr&#244;le de format, ni validation au
+                      cours de l&#8217;op&#233;ration d&#8217;upload.
+                  </p>
+                    
+                  <p>
+                      <img alt="Modification d'un fichier de mots-cl&#233;s" src="images/clip_image017.gif"/>
+                  </p>
+              </subsection>
+          </section>
+          
+          <section name="3. Gestion du cache">
+              
+              <p>
+                  La gestion du cache sp&#233;cifique au plugin
+                  deco-marquage est int&#233;gr&#233;e &#224;
+                  la page de gestion des caches de l&#8217;administrateur.
+              </p>
+              
+              <p>
+                  <img alt="Gestion des caches" src="images/clip_image019.gif"/>
+              </p>
+              
+              <p>
+                  Le service de gestion de caches du co-marquage permet de
+                  vider les caches des instances de plugins
+                  &#8220;  co-marquage &#8221; 
+                  d&#233;ploy&#233;es.
+                  Ces caches sont nettoy&#233;s au m &#234;me moment que les
+                  autres caches de l&#8217;application
+                  par l&#8217;interm&#233;diaire du bouton
+                  &#8220;  Vider &#8221; .
+              </p>
+          </section>
+          
+          <section name="4. Pr&#233;sentation">
+
+              <p>
+                  <img alt="Fiche de comarquage" src="images/clip_image021.gif"/>
+              </p>
+              
+              <p>
+                  Une page de comarquage est constitu&#233; de 2 colonnes:
+              </p>
+              
+              <ul>
+                  <li>
+                      La colonne de gauche affiche les informations principales d&#8217;une
+                      fiche dans un premier encadr&#233;. Des informations compl&#233;mentaires
+                      peuvent appara &#238;tre en dessous
+                      de celui-ci, dans des encadr&#233;s secondaires:
+                      questions/r&#233;ponses, flash,
+                      encadr&#233; &#8220;  Pour en savoir
+                      plus &#8221; ), &#8230;
+                  </li>
+                  <li>
+                      La
+                      colonne de droite fournit des informations annexes:
+                      formulaires,
+                      adresses, textes de r&#233;f&#233;rence,
+                      d&#233;finitions, &#8230;
+                  </li>
+              </ul>
+              
+              <p>
+                  En outre, 2 &#233;l&#233;ments permettent de faciliter la
+                  navigation dans l&#8217;arborescence des fiches:
+              </p>
+              
+              <ul>
+                  <li>
+                      Le fil d&#8217;Ariane, qui fournit la hi&#233;rarchie
+                      compl&#232;te des fiches jusqu&#8217;&#224; la fiche
+                      courante, et un lien vers celles-ci.
+                  </li>
+                  <li>
+                      Le rappel du th&#232;me principal: lien vers le
+                      th&#232;me de niveau 1 de la
+                      hi&#233;rarchie courante.
+                  </li>
+              </ul>
+              
+              <p>
+                  Enfin, on a acc&#232;s depuis cette page &#224; la fonction
+                  d&#8217;impression (en haut &#224; droite &#8211; <a href="#P5">Cf.
+                  &#167;5</a>)
+                  et &#224; la recherche. Un champ de
+                  recherche est affich&#233; en bas de la page, les
+                  r&#233;sultats d&#8217;une recherche &#233;tant
+                  affich&#233;s sur une nouvelle page (<a href="#P6">Cf. &#167;6</a>).
+              </p>
+          </section>
+          
+          <section name="5. Impression des fiches">
+              
+              <p><a name="P5"></a></p>
+
+              <p>
+                  L&#8217;impression est accessible via la fonction standard
+                  d&#8217;impression du navigateur.
+              </p>
+              
+              <p>
+                  <img alt="Impression" src="images/clip_image023.gif"/>
+              </p>
+              
+              <p>
+                  Un raccourci vers cette fonction est fourni en haut &#224; droite
+                  de la page, sous la forme d&#8217;un bouton (bouton
+                  &#8220;  Imprimer &#8221; ).
+              </p>
+          </section>
+          
+          <section name="6. Recherche">
+              
+              <p><a name="P6"></a></p>
+              
+              <subsection name="6.1. Recherche sur le domaine du plugin de co-marquage">
+              
+                  <p>
+                      La recherche d&#233;finie au niveau de l&#8217;&#233;cran
+                      de co-marquage n&#8217;est effectu&#233;e que sur le domaine. Cette
+                      recherche ne renvoie en effet que des
+                      r&#233;sultats propres au co-marquage.
+                  </p>
+              
+                  <p>
+                      <img alt="Recherche" src="images/clip_image025.gif"/>
+                  </p>
+              
+                  <p>
+                      La liste des r&#233;sultats permet d&#8217;acc&#233;der
+                      aux fiches de co-marquage rentrant dans le cadre de la recherche.
+                  </p>
+              
+                  <p>
+                      <img alt="R&#233;sultats" src="images/clip_image027.gif"/>
+                  </p>
+                   
+              </subsection>
+          
+              <subsection name="6.2. Recherche sur l&#8217;ensemble du site">
+
+                  <p>
+                      La recherche sur l&#8217;ensemble du site renvoie &#224; la fois
+                      les informations issues du plugin de co-marquage et celles issues de l&#8217;indexation
+                      g&#233;n&#233;rale du site.
+                  </p>
+              
+                  <p>
+                      <img src="images/clip_image029.gif"/>
+                  </p>
+              
+              </subsection>
+          </section>
+          
+      </body>
+  </document>

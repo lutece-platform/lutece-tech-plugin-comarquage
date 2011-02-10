@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <document>
+      <properties>
+          <title>
+              Lutece - Comarquage : Download
+          </title>
+      </properties>
+      <body>
+          <section name="Downloads">
+              <p>
+                  You can download the latest distributions of Comarquage Lutece plugin (sources or binaries) at 
+                  <a href="http://adullact.net/projects/plg-comarquage/">Adullact</a>.
+              </p>
+          </section>
+      </body>
+  </document>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Lut&#232;ce : Co-marquage</title>
+	</properties>
+	<body>
+		<section name="Descriptif du plugin">
+			<subsection name="Introduction">
+				<p>
+					Comarquage est un plugin Lutèce. Il permet
+					l'affichage de fiches au format XML, transmises sous
+					forme de flux XML par le service publique de la CDC (Caisse des
+					Dépots et des Consignations).
+				</p>
+				<p>L'affichage se fait sous la forme d'une XPage.</p>
+			</subsection>
+			<subsection name="Fonctionnalités">
+				<p>
+					Le plugin gère le flux transmis par la CDC (Caisse
+					des Dépots et des Consignations) qui fournit des
+					fiches au format XML.
+				</p>
+				<p>
+					Le plugin offre une possibilité d'ajouter des fiches
+					locales personnalisées.
+				</p>
+				<p>
+					Il fournit un système de cache afin d'améliorer les
+					performances pour les fiches déjà consultées.
+				</p>
+				<p>
+					Il fournit également un système d'indexation (sous forme de démon)
+					permettant d'effectuer des recherches sur les fiches
+					du plugin.
+				</p>
+				<p>
+					Le plugin propose la fonctionnalité LinkService
+					permettant de créer un lien vers une fiche du
+					plugin.
+				</p>
+				<p>
+					Ce plugin est multi-instanciable.
+				</p>
+			</subsection>
+		</section>
+	</body>
+</document>
+

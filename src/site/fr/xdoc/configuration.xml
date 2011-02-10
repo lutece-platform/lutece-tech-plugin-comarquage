@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Lutece - Comarquage : Configuration</title>
+	</properties>
+	<body>
+		<section name="Installation">
+			<p>
+				Il existe plusieurs possibilités d'installation en
+				fonction de la distribution employée :
+			</p>
+			<ul>
+				<li>
+					Distribution binaire : Le contenu du fichier zip de
+					la distribution binaire doit être décompressé dans
+					une webapp contenant déjà le coeur de lutèce.
+				</li>
+				<li>
+					Sources : Dans ce cas il est nécessaire d'ajouter la
+					dépendance sur le coeur afin de pouvoir compiler les
+					sources et de se retrouver avec une distribution
+					binaire.
+				</li>
+			</ul>
+			<p>
+				<strong>Remarque :</strong>
+				<br />
+				Il est possible d'obtenir un fichier
+				<code>war</code>
+				déployable en utilisant un packaging de type
+				<code>lutece-site.</code>
+				Ce fichier doit être placé dans le répertoire
+				<code>webapps</code>
+				de votre installation de Tomcat. Il sera automatiquement
+				déployé lors du lancement du serveur.
+			</p>
+		</section>
+		<section name="Configuration">
+			<subsection name="Généralités">
+				<ul>
+					<li>
+						La fonction Comarquage est mise en œuvre au
+						travers d’un plugin dédié
+					</li>
+					<li>Le plugin peut être multi-instancié</li>
+					<li>
+						L’affichage sur le site se fait par
+						l’intermédiaire d’une Xpage
+					</li>
+					<li>
+						Les fonctions d’indexation et de listing sont
+						lancées par un démon configuré dans le fichier
+						lutece.properties
+					</li>
+					<li>
+						Chaque instance du plugin doit avoir son propre
+						fichier de propriété
+					</li>
+					<li>
+						Chaque instance du plugin doit avoir ses propres
+						démons
+					</li>
+					<li>
+						On crée autant de Xpages que d’instances du
+						plugin
+					</li>
+				</ul>
+			</subsection>
+			<a name="comarquage.properties" />
+			<subsection name="comarquage.properties">
+				<p>
+					Le fonctionnement du plugin Comarquage peut être
+					reconfiguré en modifiant ce fichier.
+				</p>
+				<br />
+				<p>
+					Dans le cas de l'utilisation de plusieurs instances
+					du plugin, il est nécessaire de créer un fichier de
+					propiété par instance
+					(&lt;nom_de_l'instance&gt;.properties).
+					<br />
+					De plus, il faut aussi modifier la première clé des
+					propriétés, en la remplacant par le nom de
+					l'instance concernée.
+				</p>
+				<br />
+				<br />
+				<p>
+					<strong>Les propiétés générales :</strong>
+				</p>
+				<br />
+				<br />
+				<table>
+					<tr>
+						<th>Propriété</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>comarquage.pageTitle</td>
+						<td>Libellé du titre de la Xpage</td>
+					</tr>
+					<tr>
+						<td>comarquage.pagePathLabel</td>
+						<td>Libellé du chemin sur la Xpage</td>
+					</tr>
+					<tr>
+						<td>comarquage.code</td>
+						<td>code abonné de la CDC</td>
+					</tr>
+					<tr>
+						<td>comarquage.path.xml</td>
+						<td>
+							chemin des fichiers xml utilisés (à partir
+							de \webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.path.xml.locals</td>
+						<td>
+							chemin des fiches locales (à partir de
+							\webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.path.xsl</td>
+						<td>
+							chemin des feuilles de style xsl (à partir
+							de \webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.filename.xsl.accueil</td>
+						<td>
+							feuille de style utilisée par défaut pour la
+							page d'accueil
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.filename.xsl.accueil.&lt;accueil
+							spécifique&gt;
+						</td>
+						<td>
+							possibilité d'utiliser des feuilles de
+							styles différentes pour la page d'accueil
+							(par exemple en fonction du type
+							d'utilisateur)
+						</td>
+					</tr>
+				</table>
+				<br />
+				<br />
+				<p>
+					<strong>Les propiétés d'indexation</strong>
+				</p>
+				<br />
+				<br />
+				<table>
+					<tr>
+						<th>Propriété</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.basePath</td>
+						<td>
+							chemin des données d’indexation (à partir de
+							\webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.cdcPath</td>
+						<td>
+							sous-répertoire pour le stockage des fiches
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.cdcTempPath</td>
+						<td>sous-répertoire temporaire</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.xslPath</td>
+						<td>
+							fichier xsl utilisé pour les fiches
+							publiques
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.cdcXmlIndex</td>
+						<td>
+							index xml utilisé pour indexer les fiches
+							publiques (à partir de \webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.localXslPath</td>
+						<td>
+							fichier xsl utiliser pour les fiches locales
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.localBasePath</td>
+						<td>nom du répertoire des fiches locales</td>
+					</tr>
+					<tr>
+						<td>comarquage.indexing.nbDocsPerPage</td>
+						<td>
+							nombre de résultats d’une recherche par page
+						</td>
+					</tr>
+				</table>
+				<br />
+				<br />
+				<p>
+					<strong>
+						Les propriétés de la chaîne de composants :
+					</strong>
+				</p>
+				<br />
+				<br />
+				<table>
+					<tr>
+						<th>Propriété</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>comarquage.entry.cdcHtmlTheme</td>
+						<td>
+							nom du composant d’entrée pour une fiche
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.entry.cdcLinkService</td>
+						<td>
+							nom du composant d’entrée pour le
+							linkService
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.entry.cdcPageLink</td>
+						<td>
+							entrée du cycle correspondant au lien
+							(PageLink)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.entry.cdcHtmlAccueil</td>
+						<td>
+							nom du composant d’entrée pour la page
+							d’accueil
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.entry.cdcHtmlAccueilPerso.&lt;accueil
+							spécifique&gt;
+						</td>
+						<td>
+							nom du composant d’entrée pour la page
+							d’accueil, en fonction du type d'utilisateur
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.&lt;…&gt;
+						</td>
+						<td>
+							partie commune aux propriétés d’un composant
+						</td>
+					</tr>
+					<tr>
+						<th colspan="2">
+							Propriétés communes à tous les composants
+						</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>comarquage.respchain.&lt;num&gt;.name</td>
+						<td>nom du composant</td>
+					</tr>
+					<tr>
+						<td>comarquage.respchain.&lt;num&gt;.next</td>
+						<td>
+							nom du composant suivant (sauf pour les
+							composants de fin de chaîne et pour les
+							composants de type « switcher »)
+						</td>
+					</tr>
+					<tr>
+						<td>comarquage.respchain.&lt;num&gt;.class</td>
+						<td>nom qualifié de la classe associée</td>
+					</tr>
+					<tr>
+						<th colspan="2">
+							Composant de transformation xsl
+						</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.xslPath
+						</td>
+						<td>
+							nom du fichier xsl utilisé pour la
+							transformation xsl
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.xslBaseVar
+						</td>
+						<td>
+							lien vers la propriété donnant le chemin des
+							feuilles xsl
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transformA.class
+						</td>
+						<td>
+							Classe utilisée pour la transformation d'un
+							byte array en String et réciproquement
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transformA.objToByteEncoding
+						</td>
+						<td>
+							Encodage
+							<br />
+							Valeur : UTF-8
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transformB.class
+						</td>
+						<td>
+							Classe utilisée pour la transformation d'un
+							byte array en String et réciproquement
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.localisation.key
+						</td>
+						<td>clé utilisée pour la localisation</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.localisation.value
+						</td>
+						<td>
+							valeur de l’attribut de localisation
+							(=numéro d’arrondissement)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.insert_service_type=comarquage_hs
+						</td>
+						<td>
+							nom du linkService associé (donnée dans le
+							fichier de déploiement) - obligatoire pour
+							le composant du linkService uniquement
+						</td>
+					</tr>
+
+					<tr>
+						<th>Composant de cache/accès disque</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.basePath
+						</td>
+						<td>
+							chemin du répertoire de stockage (depuis
+							\webapp)
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.readOnly
+						</td>
+						<td>
+							true ou false ; true signifie qu’on a un
+							accès seulement et non une mise en cache
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.timeout
+						</td>
+						<td>temps maximum d’attente (en ms)</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.class
+						</td>
+						<td>Adapte une fiche au système de fichier</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.suffix
+						</td>
+						<td>extension des fichiers (ex : .xml)</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transform.class
+						</td>
+						<td>
+							Classe utilisée pour la transformation d'un
+							byte array en String et réciproquement
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transform.objToByteEncoding
+						</td>
+						<td>
+							Encodage
+							<br />
+							Valeur : UTF-8
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transform.byteToObjEncoding
+						</td>
+						<td>
+							Encodage
+							<br />
+							Valeur : UTF-8
+						</td>
+					</tr>
+
+
+					<tr>
+						<th>Composant d’accès à une source Http</th>
+						<th></th>
+					</tr>
+
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.proxyHost
+						</td>
+						<td>adresse du proxy</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.proxyPort
+						</td>
+						<td>port du proxy</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.baseURL
+						</td>
+						<td>
+							URL du service fournissant le flux XML
+							<br />
+							Valeur :
+							http://www.servicepubliclocal.com/spl/accueilxml.spl
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.defaultEncoding
+						</td>
+						<td>
+							Encodage par défaut
+							<br />
+							Valeur : ISO-8859-1
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.defaultBufferSize
+						</td>
+						<td>
+							Taille de buffer par défaut
+							<br />
+							Valeur :1024
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.class
+						</td>
+						<td>
+							fr.paris.lutece.plugins.comarquage.util
+							.cache.comarquageimpl.HttpFicheKeyAdapter
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.prefix
+						</td>
+						<td>
+							keyAdapter préfixe
+							<br />
+							Valeur :?
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.code
+						</td>
+						<td>
+							keyAdapter code
+							<br />
+							Valeur : c
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.keyAdapter.ref
+						</td>
+						<td>
+							keyAdapter reférence
+							<br />
+							Valeur :f
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.transform.class
+						</td>
+						<td>
+							Classe utilisée pour la transformation d'un
+							byte array en String et réciproquement
+						</td>
+					</tr>
+					<tr>
+						<th>Composant « Switcher »</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.next.public
+						</td>
+						<td>
+							nom du composant suivant si fiche publique
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.next.local
+						</td>
+						<td>
+							nom du composant suivant si fiche locale
+						</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.localMask=L
+						</td>
+						<td>
+							l’id fiches locales sont préfixées par un «
+							L » pour le distinguer de celui des fiches
+							publiques
+						</td>
+					</tr>
+					<tr>
+						<th>Composant limiteur d’accès</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.timeout
+						</td>
+						<td>temps maximum d’attente (en ms)</td>
+					</tr>
+					<tr>
+						<td>
+							comarquage.respchain.&lt;num&gt;.accessCount
+						</td>
+						<td>le nombre d’accès simultanés autorisés.</td>
+					</tr>
+				</table>
+			</subsection>
+			<a name="comarquage.xml" />
+			<subsection name="comarquage.xml">
+				<p>
+					Les propriétés concernant les démons (indexation et
+					listing des fiches locales) sont définies dans ce
+					fichier.
+				</p>
+				<p>
+					Voici l'exemple de la déclaration du démon
+					d'indexation :
+				</p>
+				<br />
+				<table>
+					<tr>
+						<td>
+							&#160;&#160;&lt;daemons&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&lt;daemon&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&#160;&#160;&lt;daemon-id&gt;comarquageIndexer&lt;/daemon-id&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&#160;&#160;&lt;daemon-name&gt;comarquage.daemon.comarquageIndexer.name&lt;/daemon-name&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&#160;&#160;&lt;daemon-description&gt;
+							comarquage.daemon.comarquageIndexer.description&lt;/daemon-description&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&#160;&#160;&lt;daemon-class&gt;
+							fr.paris.lutece.plugins.comarquage.service.daemon.CoMarquageIndexerDaemon
+							&#160;&#160;&#160;&#160;&#160;&#160;&lt;/daemon-class&gt;
+							<br />
+							&#160;&#160;&#160;&#160;&lt;/daemon&gt;
+							<br />
+							&#160;&#160;&#160;&#160;(...)
+							<br />
+							&#160;&#160;&lt;/daemons&gt;
+							<br />
+						</td>
+					</tr>
+				</table>
+			</subsection>
+		</section>
+	</body>
+</document>

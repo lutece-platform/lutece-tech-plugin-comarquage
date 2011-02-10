@@ -1,0 +1,61 @@
+<!-- <HTML>
+  <HEAD>
+    <TITLE>#i18n{comarquage.manage_link_service.pageTitle}</TITLE>
+<script language="JavaScript">
+function envoi(id){
+
+     	b_open = "<a href='";
+		b_close = "'";
+
+      	fileName="${url_portal}/jsp/site/Portal.jsp?page=${plugin_name}&id=";
+      	_themeTitle ="";
+
+      	titles=window.document.fenvoi.themetitle
+      	if (titles.value)
+      	{
+      		_themeTitle = titles.value;
+      	}
+      	else
+      	{
+			for (i=0;i<titles.length; i++)
+			{
+				if (titles[i].checked)
+				{
+					_themeTitle = titles[i].value;
+				}
+			}
+		}
+
+		_buffer =  b_open + fileName +id + b_close;
+
+   		_buffer =  _buffer + ">" + _themeTitle + "</a>";
+
+		if (opener != null){
+			// The caller must provide an insert_html method
+        	opener.xinha_editors.html_content.insertHTML(_buffer);
+        	window.close();
+      	} else {
+        	alert("Editeur HTML indisponible !" );
+      	}
+	}
+
+</script>
+
+<base href="${url_portal}/" />
+
+<link rel="stylesheet" type="text/css" href="css/portal_admin.css" title="lutece_admin">
+</HEAD>
+
+<BODY>  -->
+<div class="insert-service" >
+ <table>
+    <tr>
+      <td>
+      
+	   ${comarquage_data}
+
+      </td>
+    </tr>
+  </table>
+
+</div>

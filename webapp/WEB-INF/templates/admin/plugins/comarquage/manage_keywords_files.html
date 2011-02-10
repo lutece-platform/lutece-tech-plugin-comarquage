@@ -1,0 +1,28 @@
+<div class="content-box">
+	<h2>#i18n{comarquage.manage_keywords_file.pageTitle}</h2>
+	<#if list_keys?exists>
+		<table>
+			<tr>
+				<th>#i18n{comarquage.manage_keywords_file.columnLabelFileName}</th>
+				<th>#i18n{comarquage.manage_keywords_file.columnLabelButton}</th>
+			</tr>
+			<#list list_keys as key>
+				<tr>
+					<td>
+						&nbsp;
+						<img src="images/admin/skin/bullet.gif" border="0" />
+						#i18n{comarquage.manage_keywords_file.labelFileName.${key}}
+					</td>
+					<td>
+						<form action="jsp/admin/plugins/comarquage/ModifyXmlKeywordsFile.jsp" name="ModifyXmlKeywordsFileCdc">
+							<input type="hidden" name="plugin_name" value="${plugin_name}" />
+							<input type="hidden" name="keywords_file" value="${key}" />
+							<input type="hidden" name="title" value="#i18n{comarquage.manage_keywords_file.nextPageTitle.${key}}" />
+							<input type="submit" value="#i18n{comarquage.manage_keywords_file.buttonModify}" class="button" />
+						</form>
+					</td>
+				</tr>
+			</#list>
+		</table>
+	</#if>
+</div>

@@ -1,0 +1,86 @@
+/* ---------------------------------------------------- */
+/* ------------  Styles for comarquage  --------------- */
+/* ---------------------------------------------------- */
+table.comarquage-table
+{
+	border: 0px;
+	width: 75%;
+}
+/* style for even rows */
+table.comarquage-table tr.comarquage-table-even-row
+{
+	background-color: #EEEEEE;
+}
+/* style for odd rows */
+table.comarquage-table tr.comarquage-table-odd-row
+{
+	background-color: white;
+}
+/* table header, eg. : columns names */
+table.comarquage-table tr.comarquage-table-header
+{
+	background-color: #FBAF5D;
+	height: 10px;
+	font-weight: bold;
+}
+/* table footer, eg. : columns names */
+table.comarquage-table tr.comarquage-table-footer
+{
+	background-color: #FBAF5D;
+	height: 10px;
+	font-weight: bold;
+}
+
+.comarquage-highlight
+{
+	color: red;
+	font-weight: bold;
+}
+.comarquage-amount
+{
+	color: #00AA00;
+	font-weight: bold;
+}
+.comarquage-quotation
+{
+	font-style: italic;
+}
+
+/* Style for teleservices */
+div.cadrefond
+{
+	background-color: #E8E8E8;
+}
+
+/* Style for definitions */
+a.definition:hover
+{
+	/* Correction for IE6 */
+	background: none;
+}
+a.definition span
+{
+	display: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+a.definition:visited span
+{
+	display: none;
+	text-decoration: none;
+	font-weight: normal;
+}
+a.definition:hover span
+{
+	display: block;
+	position: absolute;
+	width: 450px;
+	margin-left: 1px;
+	background-color: white;
+	color: black;
+}
+a.definition img
+{
+	border: none;
+	vertical-align: middle;
+}

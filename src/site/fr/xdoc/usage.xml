@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<document>
+	<properties>
+		<title>Lutèce - Comarquage : Utilisation</title>
+	</properties>
+	<body>
+		<section name="Utilisation">
+			<p>
+				Une fois installé et déployé sur une application web, la
+				premère étape consiste à activer le plugin dans
+				l'interface d'administration de Lutèce, rubrique Gestion
+				des plugins.
+			</p>
+			<p>
+				Les sections suivantes décrivent l'utilisation avancée
+				des fonctionnalités offertes par le plugin.
+			</p>
+		<a name="administration" />
+		</section>
+		<section name="Interface d'Administration">
+			<subsection name="Description">
+				<p>
+					La fonctionnalité d'administration du site permet à
+					l'administrateur d'un site Lutèce de charger des
+					fiches locales, de définir les pages d'accueil
+					personnalisées (selon le type d'utilisateur). Elle
+					permet aussi de fournir le fichier de mots-clés.
+				</p>
+				<p>
+					Les actions accessibles au webmaster sont les
+					suivantes :
+				</p>
+				<ul>
+					<li>l'upload d'une nouvelle fiche locale,</li>
+					<li>la suppression d'une fiche locale,</li>
+					<li>l'upload des pages d'accueil,</li>
+					<li>
+						l'upload du fichier de mots-clés des fiches
+						publiques.
+					</li>
+				</ul>
+			<a name="accueil" />
+			</subsection>
+			<subsection name="Accueil Comarquage">
+				<p>
+					La page de gestion du plugin de co-marquage est
+					constitu&#233;e de:
+				</p>
+				<ul>
+					<li>
+						un formulaire rappelant le code abonn&#233;,
+					</li>
+					<li>
+						un lien vers la page de gestion des fiches
+						locales,
+					</li>
+					<li>
+						un lien vers la page de gestion des pages
+						d&#8217;accueil,
+					</li>
+					<li>
+						un lien vers la page de gestion du fichier de
+						mots cl&#233;s des fiches publiques.
+					</li>
+				</ul>
+			</subsection>
+			<subsection name="Gestion des fiches locales">
+				<p>
+					La page d'accueil contient la liste des fiches
+					locales présentes ainsi que le bouton d'accès à la
+					fonctionnalité d'ajout d'une fiche locale.
+					<br />
+					Pour chaque fiche locale, un bouton permettant sa
+					suppression est disponible.
+				</p>
+			</subsection>
+
+			<subsection
+				name="Ajout et mise à jour d'une fiche locale">
+
+				<p>
+					Les fiches à ajouter ou à mettre à jour sont des
+					fichiers au format XML qui doivent avoir été
+					validés. Aucun contrôle de format ou de nom de
+					fichier n'est effectué.
+				</p>
+				<br />
+				<p>
+					Si le fichier à charger n'est pas présent (voir la
+					liste disponible sur la page précédente), celui-ci
+					est chargé dans le répertoire cible sans contrôle de
+					format.
+				</p>
+				<br />
+				<p>
+					Si le fichier à charger est déjà présent dans le
+					répertoire cible (voir la liste disponible sur la
+					page précédente), un message de confirmation vous 
+					demande si vous voulez vraiment écraser le fichier 
+					xml existant. Après confirmation celui-ci sera remplacé
+					par le	nouveau fichier.
+				</p>
+
+				<p>
+					<strong>Remarque:</strong>
+				</p>
+
+				<p>
+					Le nom des fiches locales et des noeuds locaux doit
+					impérativement être préfixé par la lettre L (ce
+					préfixe est configurable).
+				</p>
+
+			</subsection>
+
+			<subsection name="Suppression d' une fiche locale">
+				<p>
+					Les fiches peuvent être supprimées par utilisation
+					du bouton disponible sur chaque ligne du tableau
+					contenant la liste des fiches locales.
+				</p>
+				<p>
+					Une page de confirmation est alors affichée. Après
+					cette validation le fichier est supprimé.
+				</p>
+			</subsection>
+
+			<subsection name="Gestion des pages d'accueil">
+				<p>
+					Chaque type d'utilisateur référencé (Grand Public,
+					Association et Professionnel) nécessite une page
+					d'accueil personnalisée. La présence de ces fichiers
+					est facultative et leur nom n'est pas modifiable.
+					Dans le cas où un fichier attendu n'est pas présent,
+					les thèmes du noeud racine (N0) seront affichés.
+				</p>
+			</subsection>
+
+			<subsection name="Modification d'une page d'accueil">
+				<p>
+					Le fichier sélectionné est uploadé et attribué au
+					type d'utilisateur sélectionné (Grand public,
+					Professionnel, Association, &#8220; par défaut
+					&#8221; ).
+				</p>
+			</subsection>
+			<subsection
+				name="Uploader le fichier de mots clés des fiches publiques">
+
+				<p>
+					Le plugin intègre la possibilité de modifier le
+					fichier de mots-clés présent pour l'indexation.
+				</p>
+				<p>
+					Le fichier est à sélectionner dans un premier temps.
+					L'action &#8220; Modifier &#8221; permet ensuite de
+					remplacer le fichier déjà présent.
+				</p>
+				<p>
+					Le fichier ne subit ni contrôle de format, ni
+					validation au cours de l'opération d'upload.
+				</p>
+			</subsection>
+		<a name="cache" />
+		</section>
+		<section name="Gestion du cache">
+			<p>
+				La gestion du cache spécifique au plugin deco-marquage
+				est intégrée à la page de gestion des caches de
+				l'administrateur.
+			</p>
+			<p>
+				Le service de gestion de caches du co-marquage permet de
+				vider les caches des instances de plugins &#8220;
+				co-marquage &#8221; déployées. Ces caches sont nettoyés
+				au même moment que les autres caches de l'application
+				par l'intermédiaire du bouton &#8220; Vider &#8221; .
+			</p>
+		<a name="presentation" />
+		</section>
+		<section name="Présentation">
+			<p>Une page de comarquage est constituée de 2 colonnes:</p>
+
+			<ul>
+				<li>
+					La colonne de gauche affiche les informations
+					principales d'une fiche dans un premier encadré. Des
+					informations complémentaires peuvent apparaître en
+					dessous de celui-ci, dans des encadrés secondaires:
+					questions/réponses, flash, encadré &#8220; Pour en
+					savoir plus &#8221; ), &#8230;
+				</li>
+				<li>
+					La colonne de droite fournit des informations
+					annexes: formulaires, adresses, textes de référence,
+					définitions, &#8230;
+				</li>
+			</ul>
+
+			<p>
+				En outre, 2 éléments permettent de faciliter la
+				navigation dans l'arborescence des fiches:
+			</p>
+
+			<ul>
+				<li>
+					Le fil d'Ariane, qui fournit la hiérarchie
+					compl&#232;te des fiches jusqu'à la fiche courante,
+					et un lien vers celles-ci.
+				</li>
+				<li>
+					Le rappel du th&#232;me principal: lien vers le
+					th&#232;me de niveau 1 de la hiérarchie courante.
+				</li>
+			</ul>
+
+			<p>
+				Enfin, on a accès depuis cette page à la fonction
+				d'impression (en haut à droite &#8211;) et à la
+				recherche. Un champ de recherche est affiché en bas de
+				la page, les résultats d'une recherche étant affichés
+				sur une nouvelle page.
+			</p>
+		<a name="print" />
+		</section>
+		<section name="Impression de fiches">
+			<p>
+				L'impression est accessible via la fonction standard
+				d'impression du navigateur.
+			</p>
+			<p>
+				Un raccourci vers cette fonction est fourni en haut à
+				droite de la page, sous la forme d'un bouton (bouton
+				&#8220; Imprimer &#8221; ).
+			</p>
+		<a name="find" />
+		</section>
+		<section name="Recherche">
+			<subsection
+				name="Recherche sur le domaine du plugin Comarquage">
+				<p>
+					La recherche définie au niveau de l'écran de
+					comarquage n'est effectuée que sur le domaine. Cette
+					recherche ne renvoie en effet que des résultats
+					propres au co-marquage.
+				</p>
+				<p>
+					La liste des résultats permet d'accéder aux fiches
+					de co-marquage rentrant dans le cadre de la
+					recherche.
+				</p>
+			</subsection>
+
+			<subsection name="Recherche sur l'ensemble du site">
+				<p>
+					La recherche sur l'ensemble du site renvoie à la
+					fois les informations issues du plugin de
+					co-marquage et celles issues de l'indexation
+					générale du site.
+				</p>
+			</subsection>
+		</section>
+	</body>
+</document>

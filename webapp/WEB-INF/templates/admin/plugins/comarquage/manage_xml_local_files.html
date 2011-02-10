@@ -1,0 +1,45 @@
+
+<div class="content-box" >
+
+<h2>#i18n{comarquage.manage_xml_local_files.pageTitle}</h2>
+
+<table>
+
+	<tr>
+		<th>#i18n{comarquage.manage_xml_local_files.columnLabelFileName}</th>
+		<th>#i18n{comarquage.manage_xml_local_files.columnLabelFileTitle}</th>
+		<th>#i18n{comarquage.manage_xml_local_files.columnLabelDelete}</th>
+	</tr>
+	
+	
+	
+	
+	<#list file_list as fileInfo >
+		<#assign file_name=fileInfo[0] file_title=fileInfo[1] >
+	<tr>
+	<td>&nbsp;<img src="images/admin/skin/bullet.gif" border="0">&nbsp;${file_name}</td>
+   <td>&nbsp;${file_title}</td>
+   <td>
+	<form method="post" action="jsp/admin/plugins/comarquage/RemoveXmlLocalFile.jsp" name="Remove_${file_name}">
+		<input type="hidden" name="plugin_name" value="${plugin_name}" />
+		<input type="hidden" name="file_name" value="${file_name}" />
+		<input type="image" src="images/admin/skin/actions/delete.png" 
+			value="#i18n{comarquage.manage_xml_local_files.buttonLabelDelete}" 
+			style="border: 0pt none ; vertical-align: bottom;" />
+    </form>
+    </td>
+
+</tr>
+
+	</#list>
+	
+</table>
+<br/>
+
+	<form action="jsp/admin/plugins/comarquage/CreateXmlLocalFile.jsp">
+	    <input type="hidden" name="plugin_name" value="${plugin_name}"/>
+		<input type="submit" value="#i18n{comarquage.manage_xml_local_files.buttonLabelAdd}" class="button" />
+	</form>
+
+
+</div>

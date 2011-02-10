@@ -1,0 +1,71 @@
+<div id="content" class="span-15 prepend-1 append-1 prepend-top">
+	<div id="one-zone-first">
+		<div id="one-zone-first-content">
+			<h2 class="page-title">#i18n{comarquage.search_results.title}</h2>
+			<div class="portlet-background">
+				<div class="error">${error}</div>
+				#i18n{comarquage.search_results.labelResultsCount} : <strong>${paginator.itemsCount}</strong><br />
+				#i18n{comarquage.search_results.labelResultsRange} : <strong>${paginator.rangeMin} - ${paginator.rangeMax}</strong><br />
+				<@pagination paginator=paginator />
+			</div>
+			<div class="portlet-background">
+				<ul>
+					<#list results_list as result>
+						<li style="list-style-type:none;list-style-image:url(images/local/skin/arrows.gif);height:35px;border-bottom:solid 1px;margin-bottom:10px;">
+							<div>
+								<a href="${result.url}">${result.title}</a>
+								<div style="float:right;">
+									<#if result.date?has_content>
+										${result.date?date?string.short}
+									</#if>
+								</div>
+							</div>
+							<div style="float:left;">${result.summary}</div>
+						</li>
+					</#list>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<#-- Freemarker macros -->
+	
+	<#-- Number of items per page selector - Combo Box implementation -->
+	<#macro NbItemsPerPageSelectorCombo nb_items_per_page>
+		<select name="items_per_page">
+			<#list [ "10" , "20" , "50" , "100" ] as nb>
+				<#if nb_items_per_page = nb>
+					<option selected="selected" value="${nb}">${nb}</option>
+				<#else>
+					<option value="${nb}">${nb}</option>
+				</#if>
+			</#list>
+		</select>
+	</#macro>
+
+	<#-- Number of items per page selector - Radio List implementation -->
+	<#macro NbItemsPerPageSelectorRadioList nb_items_per_page>
+		<#list [ "5" , "10" , "20" , "50" ] as nb>
+			<#if nb = nb_items_per_page > 
+				<input value="${nb}" id="items_per_page${nb}" name="items_per_page" class="radio" type="radio" checked /><label for="items_per_page${nb}">${nb}</label>
+			<#else>
+				<input value="${nb}" id="items_per_page${nb}" name="items_per_page" class="radio" type="radio" /><label for="items_per_page${nb}">${nb}</label>
+			</#if>
+		</#list>
+	</#macro>
+</div>
+<div id="sidebar" class="span-6 append-1 prepend-top last">
+	<form name="search" method="post" action="jsp/site/Portal.jsp?page=comarquage">
+		<div class="portlet-background">
+			<p>
+				<input type="text" name="query" size="20" value="${query?if_exists}" style="margin-bottom:5px;" />
+				<input type="image" src="images/local/skin/buttons/b_search.png" title="#i18n{comarquage.search_results.buttonSearch}" alt="#i18n{comarquage.search_results.buttonSearch}" />
+			</p>
+			<p>
+				<#-- Number of documents per page selector -->
+				#i18n{comarquage.search_results.labelNbDocsPerPage}<br />
+				<@NbItemsPerPageSelectorRadioList nb_items_per_page />
+			</p>
+		</div>
+	</form>
+</div>
