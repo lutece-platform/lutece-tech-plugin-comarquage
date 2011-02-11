@@ -17,7 +17,7 @@
 	<repository>
 		<id>luteceSnapshot</id>
         <name>luteceSnapshot</name>
-        <url>http://dev.lutece.paris.fr/snapshot_repository</url>
+        <url>http://dev.lutece.paris.fr/snapshot_repository/plugin-comarquage</url>
         <snapshots>
         	<enabled>true</enabled>
         </snapshots>
@@ -25,7 +25,7 @@
 	<repository>
 		<id>lutece</id>
 		<name>luteceRepository</name>
-		<url>http://dev.lutece.paris.fr/maven_repository</url>
+		<url>http://dev.lutece.paris.fr/maven_repository/plugin-comarquage</url>
 		<snapshots>
 			<enabled>false</enabled>
 		</snapshots>
@@ -43,15 +43,15 @@
 
 <issueManagement>
   <system>jira</system>
-  <url>${jiraBaseUrl}/browse/COMARQUAGE</url>
+  <url>${jiraBaseUrl}/browse/COMARQUAGE/plugin-comarquage</url>
 </issueManagement>
 
 <properties>
 	<componentName>comarquage</componentName>
 </properties>
     <scm>
-        <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical</connection>
-        <developerConnection>scm:svn:https://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical</developerConnection>
-        <url>http://dev.lutece.paris.fr/viewvc/portal/trunk/plugins/technical</url>
+        <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical/plugin-comarquage</connection>
+        <developerConnection>scm:svn:https://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical/plugin-comarquage</developerConnection>
+        <url>http://dev.lutece.paris.fr/viewvc/portal/trunk/plugins/technical/plugin-comarquage</url>
     </scm>
 </project>
