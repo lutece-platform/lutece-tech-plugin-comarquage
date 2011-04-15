@@ -43,6 +43,7 @@ import org.apache.lucene.document.Document;
 
 import java.io.IOException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -56,6 +57,8 @@ public class CoMarquageLocalIndexer implements SearchIndexer
     private static final String INDEXER_DESCRIPTION = "Indexer service for local cards";
     private static final String INDEXER_VERSION = "1.0.0";
     private static final String PROPERTY_INDEXER_ENABLE = "comarquage.indexing.localIndexer.enable";
+    private static final String JSP_SEARCH_COMARQUAGE = "jsp/site/Portal.jsp?page=comarquage";
+    public static final String INDEX_TYPE_COMARQUAGE = "comarquage.indexing.localType";
 
     /**
      * {@inheritDoc}
@@ -133,4 +136,23 @@ public class CoMarquageLocalIndexer implements SearchIndexer
 
         return ( strEnable.equalsIgnoreCase( "true" ) );
     }
+
+    /**
+     * {@inheritDoc}
+     */
+	public List<String> getListType(  )
+	{
+		List<String> listType = new ArrayList<String>(  );
+		listType.add( AppPropertiesService.getProperty( INDEX_TYPE_COMARQUAGE ) );
+		
+		return listType;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public String getSpecificSearchAppUrl(  )
+	{
+		return JSP_SEARCH_COMARQUAGE;
+	}
 }

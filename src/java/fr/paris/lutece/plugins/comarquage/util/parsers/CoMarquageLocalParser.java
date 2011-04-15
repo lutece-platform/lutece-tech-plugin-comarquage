@@ -263,7 +263,7 @@ public class CoMarquageLocalParser extends DefaultHandler
         document.add( new Field( SearchItem.FIELD_UID, strId, Field.Store.YES, Field.Index.NO ) );
         document.add( new Field( SearchItem.FIELD_CONTENTS, _strContents, Field.Store.NO, Field.Index.ANALYZED ) );
         document.add( new Field( SearchItem.FIELD_TITLE, _strTitle, Field.Store.YES, Field.Index.NO ) );
-        document.add( new Field( SearchItem.FIELD_TYPE, _strType, Field.Store.YES, Field.Index.ANALYZED ) );
+        document.add( new Field( SearchItem.FIELD_TYPE, _strType, Field.Store.YES, Field.Index.NOT_ANALYZED ) );
 
         // Adds the new document to the list
         _listDocuments.add( document );
