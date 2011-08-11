@@ -48,6 +48,7 @@
 
 <properties>
 	<componentName>comarquage</componentName>
+	<jiraProjectName>COMARQUAGE</jiraProjectName>
 </properties>
     <scm>
         <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical/plugin-comarquage</connection>
