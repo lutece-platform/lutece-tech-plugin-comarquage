@@ -2,10 +2,10 @@
 <!DOCTYPE document PUBLIC "//UNKNOWN/" "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <document>
 	<properties>
-		<title>Lut&#232;ce : Co-marquage</title>
+		<title>Plugin comarquage</title>
 	</properties>
 	<body>
-		<section name="Descriptif du plugin">
+		<section name="Plugin comarquage">
 			<subsection name="Introduction">
 				<p>
 					Comarquage est un plugin Lutèce. Il permet
