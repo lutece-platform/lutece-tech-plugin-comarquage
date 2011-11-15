@@ -31,39 +31,61 @@
  *
  * License 1.0
  */
+
 package fr.paris.lutece.plugins.comarquage.util.cache.genericimpl;
 
+import fr.paris.lutece.plugins.comarquage.util.FileUtils;
 import fr.paris.lutece.plugins.comarquage.util.cache.IContextChainManager;
 import fr.paris.lutece.plugins.comarquage.util.cache.IKeyAdapter;
-import fr.paris.lutece.portal.service.cache.CacheService;
+import fr.paris.lutece.plugins.comarquage.util.cache.IObjectTransform;
+import fr.paris.lutece.portal.service.util.AppException;
+import fr.paris.lutece.portal.service.util.AppLogService;
+import fr.paris.lutece.portal.service.util.AppPathService;
 import fr.paris.lutece.portal.service.util.AppPropertiesService;
+import fr.paris.lutece.util.filesystem.DirectoryNotFoundException;
+import fr.paris.lutece.util.filesystem.FileSystemUtil;
 
-import net.sf.ehcache.Cache;
-import net.sf.ehcache.Element;
-
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.Serializable;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
  * Disk Access Filter<br/>
- * Wraps an Ehcache Cache.<br/>
  *
  * <b>Properties read here:</b>
  * <ul>
- * <li><i>base</i><b><code>.name</code></b>&nbsp;: <b>Required</b> Unique name for the cache
+ * <li><i>base</i><b><code>.basePath</code></b>&nbsp;: <b>Required</b> The filesystem path where cached files will be store.</li>
  * <li><i>base</i><b><code>.readOnly</code></b>&nbsp;: Mark the composent has readonly (source of documents access).</li>
  * <li><i>base</i><b><code>.keyAdapter.class</code></b>&nbsp;: <b>Required</b> The class used to implements key adapter (transform key to a valid relatif filesystem path).</li>
+ * <li><i>base</i><b><code>.transform.class</code></b>&nbsp;: <b>Required</b> The class used to access informations stored in the disk.</li>
  * </ul>
  */
 public class DiskCache extends AbstractCache
 {
-    private static final String PROPERTY_FRAGMENT_NAME = ".name"; // Name should be unique
+    private static final String PROPERTY_FRAGMENT_BASE_PATH = ".basePath";
     private static final String PROPERTY_FRAGMENT_READ_ONLY = ".readOnly";
     private static final String PROPERTY_FRAGMENT_READ_ONLY_TRUE = "true";
     private static final String PROPERTY_BASE_KEY_ADAPTER = ".keyAdapter";
-    private Cache _cache;
+    private static final String PROPERTY_BASE_TRANSFORM = ".transform";
+
+    //ancien	private static final int ERROR_NUMBER_COMARQUAGE_IO = 1001;
+    private static final String ERROR_NUMBER_COMARQUAGE_IO = "1001";
     private IKeyAdapter _keyAdapter;
+    private IObjectTransform _objTransform;
     private boolean _bReadOnly;
+    private String _strPropertyBasePath;
+    private int _nCacheSize;
 
     /**
      * Public constructor
@@ -83,7 +105,8 @@ public class DiskCache extends AbstractCache
     {
         super.init( strBase );
 
-        //_strPropertyBasePath = strBase + PROPERTY_FRAGMENT_BASE_PATH;
+        _strPropertyBasePath = strBase + PROPERTY_FRAGMENT_BASE_PATH;
+
         final String readOnly = AppPropertiesService.getProperty( strBase + PROPERTY_FRAGMENT_READ_ONLY );
 
         if ( readOnly != null )
@@ -92,9 +115,8 @@ public class DiskCache extends AbstractCache
         }
 
         _keyAdapter = readInitKeyAdapter( strBase + PROPERTY_BASE_KEY_ADAPTER );
-
-        _cache = CacheService.getInstance(  )
-                             .createCache( AppPropertiesService.getProperty( strBase + PROPERTY_FRAGMENT_NAME ) );
+        _objTransform = readInitObjectTransform( strBase + PROPERTY_BASE_TRANSFORM );
+        _nCacheSize = 0;
     }
 
     /**
@@ -108,14 +130,38 @@ public class DiskCache extends AbstractCache
     {
         final Object adaptedKey = _keyAdapter.adaptKey( key );
 
-        Element element = _cache.get( adaptedKey );
+        String strPath = AppPathService.getPath( _strPropertyBasePath, (String) adaptedKey );
+        final File file = new File( strPath );
 
-        if ( element == null )
+        try
+        {
+            final InputStream in0 = new FileInputStream( file );
+            final InputStream in = new BufferedInputStream( in0 );
+
+            final byte[] buf = new byte[(int) file.length(  )];
+            int len = 0;
+            int pos = 0;
+
+            do
+            {
+                len = in.read( buf, pos, buf.length - pos );
+                pos += len;
+            }
+            while ( len > 0 );
+
+            in.close(  );
+
+            return _objTransform.transformToObject( buf );
+        }
+        catch ( FileNotFoundException e )
         {
             return null;
         }
-
-        return element.getObjectValue(  );
+        catch ( IOException e )
+        {
+            //ancien	throw new PhysicalException( ERROR_NUMBER_COMARQUAGE_IO, filterManager.getPluginName(  ), e );
+            throw new AppException( ERROR_NUMBER_COMARQUAGE_IO, e );
+        }
     }
 
     /**
@@ -132,8 +178,38 @@ public class DiskCache extends AbstractCache
             return;
         }
 
-        final Object adaptedKey = _keyAdapter.adaptKey( key );
-        _cache.put( new Element( adaptedKey, element ) );
+        try
+        {
+            final Object adaptedKey = _keyAdapter.adaptKey( key );
+
+            String strPath = AppPathService.getPath( _strPropertyBasePath, (String) adaptedKey );
+            final File file = new File( strPath );
+
+            // return true to indicate a directory creation, false if directory exist
+            file.getParentFile(  ).mkdirs(  );
+
+            // return true to indicate a file creation, false if file exist
+            boolean bNewFile = file.createNewFile(  );
+
+            if ( bNewFile )
+            {
+                _nCacheSize++;
+            }
+
+            final OutputStream out0 = new FileOutputStream( file );
+            final OutputStream out = new BufferedOutputStream( out0 );
+
+            final byte[] buf = _objTransform.transformToBinary( element );
+
+            out.write( buf );
+
+            out.close(  );
+        }
+        catch ( IOException e )
+        {
+            //ancien	throw new PhysicalException( ERROR_NUMBER_COMARQUAGE_IO, filterManager.getPluginName(  ), e );
+            throw new AppException( ERROR_NUMBER_COMARQUAGE_IO, e );
+        }
     }
 
     /**
@@ -148,7 +224,13 @@ public class DiskCache extends AbstractCache
             return;
         }
 
-        _cache.removeAll(  );
+        String strPath;
+        strPath = AppPathService.getPath( _strPropertyBasePath );
+
+        File dirPath = new File( strPath );
+        FileUtils.deleteDirectory( dirPath );
+
+        _nCacheSize = 0;
     }
 
     /**
@@ -162,6 +244,55 @@ public class DiskCache extends AbstractCache
             return 0;
         }
 
-        return _cache.getSize(  );
+        String strPath;
+        strPath = AppPathService.getPath( _strPropertyBasePath );
+
+        List<File> listFiles = null;
+
+        try
+        {
+            listFiles = FileSystemUtil.getFiles( strPath, "" );
+            listFiles.addAll( FileSystemUtil.getSubDirectories( strPath, "" ) );
+            _nCacheSize = scanDirectoryCacheSize( listFiles );
+        }
+        catch ( DirectoryNotFoundException e )
+        {
+            AppLogService.debug( "Directory not found : " + strPath );
+        }
+
+        return _nCacheSize;
+    }
+
+    /**
+     * Count files from disk cache
+     * @param listFiles list of files (including directory)
+     * @return number of files
+     */
+    private int scanDirectoryCacheSize( List<File> listFiles )
+    {
+        int nCache = 0;
+
+        // loop through all the files of the list
+        if ( listFiles.size(  ) == 0 )
+        {
+            return nCache;
+        }
+
+        for ( File file : listFiles )
+        {
+            if ( file.isDirectory(  ) && !file.getAbsolutePath(  ).endsWith( "CVS" ) )
+            {
+                nCache += scanDirectoryCacheSize( Arrays.asList( file.listFiles(  ) ) );
+            }
+
+            if ( !file.isFile(  ) )
+            {
+                continue;
+            }
+
+            nCache++;
+        }
+
+        return nCache;
     }
 }

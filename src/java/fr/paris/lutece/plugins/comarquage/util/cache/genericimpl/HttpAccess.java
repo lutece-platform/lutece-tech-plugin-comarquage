@@ -199,7 +199,7 @@ public class HttpAccess extends AbstractAccessor
         }
 
         // if proxy host and port found, set the correponding elements
-        if ( ( _strProxyHost != null ) && ( _strProxyPort != null ) )
+        if ( ( _strProxyHost != null ) &&( !_strProxyHost.equals("") ) && ( _strProxyPort!=null )&& ( !_strProxyPort.equals("") ) )
         {
             client.getHostConfiguration(  ).setProxy( _strProxyHost, Integer.parseInt( _strProxyPort ) );
         }
