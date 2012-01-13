@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<plug-in>
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><plug-in>
 
     <!-- Plugin Informations -->
     <name>comarquage</name>
     <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
-    <version>2.0.6</version>
+    <version>2.0.8</version>
     <description>comarquage.plugin.description</description>
-    <documentation></documentation>
-    <installation></installation>
-    <changes></changes>
-    <user-guide></user-guide>
+    <documentation/>
+    <installation/>
+    <changes/>
+    <user-guide/>
     <provider>comarquage.plugin.provider</provider>
     <provider-url>http://lutece.paris.fr</provider-url>
     <icon-url>images/admin/skin/plugins/comarquage/comarquage.png</icon-url>
     <copyright>Copyright (c) 2001-2011 Mairie de Paris</copyright>
     <core-version-dependency>
         <min-core-version>2.3.1</min-core-version>
-        <max-core-version></max-core-version>
+        <max-core-version/>
     </core-version-dependency>
     <db-pool-required>0</db-pool-required>
 
