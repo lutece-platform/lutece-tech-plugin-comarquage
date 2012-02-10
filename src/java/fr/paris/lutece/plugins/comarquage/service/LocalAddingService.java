@@ -633,7 +633,7 @@ public class LocalAddingService
         // Example :
         //<item>
         //  <lien type="theme">LN5</lien>
-        //  <titre>Activités périscolaires</titre>
+        //  <titre>ActivitÃ©s pÃ©riscolaires</titre>
         //</item>
         //Create and append item element
         Element item = document.createElement( ELEMENT_ITEM );
