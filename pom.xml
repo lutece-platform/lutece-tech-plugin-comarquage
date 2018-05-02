@@ -1,59 +1,53 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
-<parent>
-  <artifactId>lutece-plugins-pom</artifactId>
-  <groupId>fr.paris.lutece.plugins</groupId>
-  <version>3.7</version>
-</parent>
-
-<modelVersion>4.0.0</modelVersion>
-<groupId>fr.paris.lutece.plugins</groupId>
-<artifactId>plugin-comarquage</artifactId>
-<packaging>lutece-plugin</packaging>
-<version>2.0.9-SNAPSHOT</version>
-<name>Lutece comarquage plugin</name>
-
-<repositories>
-	<repository>
-		<id>luteceSnapshot</id>
-        <name>luteceSnapshot</name>
-        <url>http://dev.lutece.paris.fr/snapshot_repository</url>
-        <snapshots>
-        	<enabled>true</enabled>
-        </snapshots>
-    </repository>
-	<repository>
-		<id>lutece</id>
-		<name>luteceRepository</name>
-		<url>http://dev.lutece.paris.fr/maven_repository</url>
-		<snapshots>
-			<enabled>false</enabled>
-		</snapshots>
-	</repository>
-</repositories>
-
-<dependencies>
-	<dependency>
-	    <groupId>fr.paris.lutece</groupId>
-	    <artifactId>lutece-core</artifactId>
-	    <version>[2.4.2-SNAPSHOT,)</version>
-	    <type>lutece-core</type>
-	</dependency>
-</dependencies>
-
-<issueManagement>
-  <system>jira</system>
-  <url>${jiraBaseUrl}/browse/COMARQUAGE/plugin-comarquage</url>
-</issueManagement>
-
-<properties>
-	<componentName>comarquage</componentName>
-	<jiraProjectName>COMARQUAGE</jiraProjectName>
-	<jiraComponentId>10080</jiraComponentId>
-</properties>
+    <parent>
+        <artifactId>lutece-global-pom</artifactId>
+        <groupId>fr.paris.lutece.tools</groupId>
+        <version>3.0.12</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.paris.lutece.plugins</groupId>
+    <artifactId>plugin-comarquage</artifactId>
+    <packaging>lutece-plugin</packaging>
+    <version>2.0.9-SNAPSHOT</version>
+    <name>Lutece comarquage plugin</name>
+    <repositories>
+        <repository>
+            <id>luteceSnapshot</id>
+            <name>luteceSnapshot</name>
+            <url>http://dev.lutece.paris.fr/snapshot_repository</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>lutece</id>
+            <name>luteceRepository</name>
+            <url>http://dev.lutece.paris.fr/maven_repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>fr.paris.lutece</groupId>
+            <artifactId>lutece-core</artifactId>
+            <version>[2.4.2-SNAPSHOT,)</version>
+            <type>lutece-core</type>
+        </dependency>
+    </dependencies>
+    <issueManagement>
+        <system>jira</system>
+        <url>${jiraBaseUrl}/browse/COMARQUAGE/plugin-comarquage</url>
+    </issueManagement>
+    <properties>
+        <componentName>comarquage</componentName>
+        <jiraProjectName>COMARQUAGE</jiraProjectName>
+        <jiraComponentId>10080</jiraComponentId>
+    </properties>
     <scm>
-        <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical/plugin-comarquage</connection>
-        <developerConnection>scm:svn:https://dev.lutece.paris.fr/svn/lutece/portal/trunk/plugins/technical/plugin-comarquage</developerConnection>
-        <url>http://dev.lutece.paris.fr/viewvc/lutece/portal/trunk/plugins/technical/plugin-comarquage</url>
+        <connection>scm:git:https://github.com/lutece-platform/lutece-tech-plugin-comarquage.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-platform/lutece-tech-plugin-comarquage.git</developerConnection>
+        <url>https://github.com/lutece-platform/lutece-tech-plugin-comarquage.git</url>
     </scm>
 </project>
